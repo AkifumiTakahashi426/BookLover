@@ -79,7 +79,7 @@ public class Register extends HttpServlet implements EnvSet {
             } catch (Exception e) {
                 // 例外発生時、error.jspへフォワードする
                 request.setAttribute("error", e.toString());
-                forwardPath = "/WEB-INF/error.jsp";
+                forwardPath = "/WEB-INF/jsp/error.jsp";
 
             }
 
@@ -115,7 +115,7 @@ public class Register extends HttpServlet implements EnvSet {
 //                msg="エラーが発生しました。(Registerサーブレット、購入登録にて)";
 //            }
             // request.setAttribute("msg", msg);
-            // forwardPath = "/WEB-INF/Register.jsp";
+            // forwardPath = "/WEB-INF/jsp/Register.jsp";
 
             // ↑↑newbuyDAO確認して作成。↑↑
             //
@@ -144,7 +144,7 @@ public class Register extends HttpServlet implements EnvSet {
 //                msg="エラーが発生しました。(Registerサーブレット、お気に入り登録にて)";
 //            }
             // request.setAttribute("msg", msg);
-            // forwardPath = "/WEB-INF/Register.jsp";
+            // forwardPath = "/WEB-INF/jsp/Register.jsp";
 
             // ↑↑newbuyDAO確認して作成。↑↑
             //
