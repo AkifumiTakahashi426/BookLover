@@ -32,7 +32,7 @@ public class Register extends HttpServlet implements EnvSet {
 
     public Register() {
         super();
-        // TODO Auto-generated constructor stub
+        // TOD Auto-generated constructor stub
     }
 
     public void init(ServletConfig config) throws ServletException {
@@ -58,6 +58,9 @@ public class Register extends HttpServlet implements EnvSet {
 
         String action = request.getParameter("action");
 
+
+        ///わー
+
         // actionの文字列により分岐。(くそ長やけど許して）
         switch (action) {
         case "search":
@@ -71,7 +74,7 @@ public class Register extends HttpServlet implements EnvSet {
 
             // json検索の一連の流れ
             // isbnと書名の取得
-            String isbn = request.getParameter("isbn");
+            String isbn = request.getParameter("identifier");
             String title = request.getParameter("title");
 
             // 接続URL

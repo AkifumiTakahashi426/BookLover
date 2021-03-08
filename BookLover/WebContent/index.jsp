@@ -17,7 +17,7 @@
 
 </form>
 <br>
-<a href="/BookLover/Main?menu=1">新規登録</a>
+<a href="/BookLover/Main?menu=4">新規登録</a>
 
 
 
