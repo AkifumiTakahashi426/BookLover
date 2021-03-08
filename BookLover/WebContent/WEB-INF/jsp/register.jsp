@@ -21,13 +21,11 @@
     <form action="/BookLover/Register.servlet?search" method="post">
     タイトル<br><input type="text" name="title" value="title">
     ISBN<br><input type="text" name="title" value="identifier">
-    <input type="submit" value="検索" >
+    <input type="submit" name="action "value="検索" >
     </form>
     <hr>
 
-    <form action="/BookLover/Register.servlet?buy" method="post">
-    <input type="submit" value="登録">
-    </form>
+
 
        <table border="1">
        <tr>
@@ -43,12 +41,17 @@
        </td>
        <tr>
        <td>
-       <input type="radio" name="want" value="want">
+       <form action="/BookLover/Register.servlet?buy" method="post">
+       <input type="button" name="action" value="buy">
+       </form>
+
        </td>
        </tr>
        <tr>
        <td>
-
+        <form action="/BookLover/Register.servlet?want" method="post">
+       <input type="button" name="" value="want">
+       </form>
        </td>
        </tr>
        <%-- <%} %>
@@ -56,9 +59,8 @@
 
        <% }%> --%>
        </table>
-       <form action="/BookLover/Register.servlet?want" method="post">
-       <input type="submit" name="want" value="更新">
-       </form>
+
+
 
 </body>
 </html>
