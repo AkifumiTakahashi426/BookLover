@@ -58,6 +58,9 @@ public class Register extends HttpServlet implements EnvSet {
 
         String action = request.getParameter("action");
 
+
+        ///わー
+
         // actionの文字列により分岐。(くそ長やけど許して）
         switch (action) {
         case "search":
