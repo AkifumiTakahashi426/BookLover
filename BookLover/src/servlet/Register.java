@@ -61,6 +61,7 @@ public class Register extends HttpServlet implements EnvSet {
         switch (action) {
         case "search":
 
+            //ちゃんと検索出来てたらここに配列で検索結果が入る
             List<Book> bookList =search.search(identifier,title) ;
 
 
