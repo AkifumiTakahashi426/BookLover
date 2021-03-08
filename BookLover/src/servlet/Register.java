@@ -32,7 +32,7 @@ public class Register extends HttpServlet implements EnvSet {
 
     public Register() {
         super();
-        // TODO Auto-generated constructor stub
+        // TOD Auto-generated constructor stub
     }
 
     public void init(ServletConfig config) throws ServletException {
@@ -57,6 +57,9 @@ public class Register extends HttpServlet implements EnvSet {
         String forwardPath;
 
         String action = request.getParameter("action");
+
+
+        ///わー
 
         // actionの文字列により分岐。(くそ長やけど許して）
         switch (action) {
