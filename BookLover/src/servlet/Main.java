@@ -130,9 +130,10 @@ public class Main extends HttpServlet {
             session.setAttribute("userName", userName);
             session.setAttribute("newPass", newPass);
             if(check==true) {
+            ard.createTable();
             forwardPath = "/WEB-INF/jsp/completion.jsp";
             }else {
-                forwardPath = "/WEB-INF/jsp/loginError";
+                forwardPath = "/WEB-INF/jsp/loginError.jsp";
             }
             break;
         case "3":
