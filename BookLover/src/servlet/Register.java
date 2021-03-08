@@ -71,14 +71,14 @@ public class Register extends HttpServlet implements EnvSet {
 
             // json検索の一連の流れ
             // isbnと書名の取得
-            String isbn = request.getParameter("identifier");
+            String ientifier = request.getParameter("identifier");
             String title = request.getParameter("title");
 
             // 接続URL
             String requestUrl = null;
 
             // ISBNが入力されていたらISBNで検索、入力されていなかったら書名等で検索
-            if (isbn.equals("")) {
+            if (ientifier.equals("")) {
                 // 書名等で検索
                 requestUrl = "https://www.googleapis.com/books/v1/volumes?q=intitle:" + title;
 
@@ -86,10 +86,10 @@ public class Register extends HttpServlet implements EnvSet {
                 // request.setAttribute("key", "タイトル(" + title + ")");
             } else {
                 // ISBNで検索
-                requestUrl = "https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn;
+                requestUrl = "https://www.googleapis.com/books/v1/volumes?q=isbn:" + ientifier;
 
                 // disp.jspへ渡すデータを格納
-                request.setAttribute("key", "ISBN(" + isbn + ")");
+                request.setAttribute("key", "ISBN(" + ientifier + ")");
             }
 
             // Google Books APIへの接続
@@ -313,6 +313,10 @@ public class Register extends HttpServlet implements EnvSet {
         ///////////////// ↓buy↓/////////////////
 
         case "buy":
+
+            String identifier = request.getParameter("identifier");
+
+
             break;
 
         case "want":
