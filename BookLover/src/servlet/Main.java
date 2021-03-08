@@ -124,13 +124,16 @@ public class Main extends HttpServlet {
             abc.setPass(newPass);
 
             AccountRegisterDAO ard=new AccountRegisterDAO(abc);
+            boolean check=ard.newAccount(abc);
 //            UserDAO userDAO=new UserDAO();
 //            userDAO.Entry(userName,newPass);
-
             session.setAttribute("userName", userName);
             session.setAttribute("newPass", newPass);
+            if(check==true) {
             forwardPath = "/WEB-INF/jsp/completion.jsp";
-
+            }else {
+                forwardPath = "/WEB-INF/jsp/loginError";
+            }
             break;
         case "3":
         default:
