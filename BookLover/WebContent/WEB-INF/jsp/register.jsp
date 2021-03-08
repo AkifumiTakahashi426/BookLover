@@ -4,20 +4,33 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>♡BookLover♡</title>
+<title>書籍検索のサンプル</title>
+<script type="text/javascript">
+<!--
+function check(){
+    if(!document.form1.isbn.value && !document.form1.title.value){
+        window.alert('どちらにも入力されていません。');
+        return false;
+    }else{
+        return true;
+    }
+}
+
+// -->
+</script>
+
 </head>
 <body>
-<form action="/BookLover/Management?menu=1" method="post">
-<input type="text" name=""><br>
-<input type="submit" value="検索">
-</form>
-<form action="/BookLover/Management?menu=2" method="post">
-<input type="number" name=""><br>
-<input type="submit" value="検索">
-<hr>
-<hr>
-<hr>
-検索を押したらここに一覧を表示
-</form>
+    <h3>書籍検索</h3>
+    <b>ISBN</b>あるいは<b>タイトル</b>で検索します。両方入力した場合は、<b>ISBN</b>で検索します。
+    <hr>
+    <form method="POST" action="/BookLover/Register" name="form1" onSubmit="return check()">
+    ISBN: <input type="text" name="isbn" size=30><br><br>
+        タイトル: <input type="text" name="title" size=30><br><br>
+        <input type="submit" value="検索" >
+        <input type="hidden" name="action"value="search">
+        <input type="reset" value="リセット">
+    </form>
+    <%@ include file="/WEB-INF/jsp/copyright.jsp" %>
 </body>
 </html>
