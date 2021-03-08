@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -80,6 +81,7 @@ public class Main extends HttpServlet {
         String forwardPath = "";
         request.setCharacterEncoding("utf-8");
         String menu = request.getParameter("menu");
+        HttpSession session = request.getSession();
 
         switch (menu) {
         case "1":
@@ -87,14 +89,13 @@ public class Main extends HttpServlet {
             String name = request.getParameter("userName");
             String pass = request.getParameter("pass");
 
-            User ab = new User();
-            ab.setName(name);
-            ab.setPass(pass);
+            User ab = new User(name,pass);
+            //ab.setName(name);
+           // ab.setPass(pass);
             AccountDAO ad = new AccountDAO();
-            User returnAb = ad.findAccount(ab);
-            if (returnAb != null) {
-                HttpSession session = request.getSession();
-                session.setAttribute("account", returnAb);
+            List<String> accountList = ad.findAccount(name,pass);
+            if (accountList != null) {
+                session.setAttribute("account",accountList);
                 // フォワード先(成功)
                 forwardPath = "/WEB-INF/jsp/top.jsp";
             } else {
@@ -125,7 +126,7 @@ public class Main extends HttpServlet {
             AccountRegisterDAO ard=new AccountRegisterDAO(abc);
 //            UserDAO userDAO=new UserDAO();
 //            userDAO.Entry(userName,newPass);
-            HttpSession session = request.getSession();
+
             session.setAttribute("userName", userName);
             session.setAttribute("newPass", newPass);
             forwardPath = "/WEB-INF/jsp/completion.jsp";
