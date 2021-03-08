@@ -16,7 +16,8 @@ public class Management extends HttpServlet {
 
     public Management() {
         super();
-        // TODO Auto-generated constructor stub
+        // TODO Auto-generated constructor
+
     }
 
 
