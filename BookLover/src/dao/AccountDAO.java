@@ -9,9 +9,9 @@ import java.sql.SQLException;
 import model.User;
 
 public class AccountDAO {
-    private final String JDBC_URL = "Jdbc:mysql://localhost:3306/training";
-    private final String DB_USER = "user02";
-    private final String DB_PASS = "user02pass";
+    private final String JDBC_URL = "Jdbc:mysql://172.16.61.117:3306/book_lover";
+    private final String DB_USER = "unic01";
+    private final String DB_PASS = "unic01pass";
 
     public User findAccount(User ab) {
         User returnAb = new User();
