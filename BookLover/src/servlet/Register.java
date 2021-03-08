@@ -71,7 +71,7 @@ public class Register extends HttpServlet implements EnvSet {
 
             // json検索の一連の流れ
             // isbnと書名の取得
-            String isbn = request.getParameter("isbn");
+            String isbn = request.getParameter("identifier");
             String title = request.getParameter("title");
 
             // 接続URL
