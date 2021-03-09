@@ -3,6 +3,10 @@ package beans;
 
 
 public class Book {
+
+    // id個人識別用
+    String id;
+
     // title書籍名
     String title;
 
@@ -39,8 +43,9 @@ public class Book {
     String description;
 
     // コンストラクタ
-    public Book(String title, String publisher, String authors, String thumbnail, String identifier,
+    public Book(String id, String title, String publisher, String authors, String thumbnail, String identifier,
             String selfLink, String description,int fun, String summary, boolean alreadyRead, int have) {
+        this.id = id;
         this.title = title;
         this.publisher = publisher;
         this.authors = authors;
@@ -150,5 +155,13 @@ public class Book {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
