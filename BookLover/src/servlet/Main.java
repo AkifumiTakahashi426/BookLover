@@ -128,19 +128,17 @@ public class Main extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("userName", userName);
             session.setAttribute("newPass", newPass);
-<<<<<<< HEAD
+            boolean check=ard.newAccount(abc);
+
             if(check==true) {
-            ard.createTable();
-=======
->>>>>>> branch 'master' of https://github.com/AkifumiTakahashi426/BookLover
+//            ard.createTable();
+
             forwardPath = "/WEB-INF/jsp/completion.jsp";
-<<<<<<< HEAD
+
             }else {
                 forwardPath = "/WEB-INF/jsp/loginError.jsp";
             }
-=======
 
->>>>>>> branch 'master' of https://github.com/AkifumiTakahashi426/BookLover
             break;
         case "3":
         default:

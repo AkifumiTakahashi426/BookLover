@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import beans.Book;
+import dao.BookLoverDAO;
 import model.SearchBooks;
 
 @WebServlet("/Management")
@@ -50,6 +51,7 @@ public class Management extends HttpServlet {
         Book book = null;
 
         SearchBooks searchBooks = new SearchBooks();
+        BookLoverDAO blDAO =new BookLoverDAO();
 
         // セッション作成
         request.setCharacterEncoding("UTF-8");
@@ -60,12 +62,12 @@ public class Management extends HttpServlet {
 
             // identifierが入力されていたらidentifierで検索
             if (identifier != null && identifier.length() > 0) {
-                book = searchBooks.informationDAO(identifier);
+                book = blDAO.informationDAO(identifier);
                 bookList.add(book);
 
             // identifierが無ければタイトルで検索
             } else if (title != null && title.length() > 0) {
-                bookList = searchBooks.findTitleDAO(title);
+                bookList = blDAO.findTitleDAO(title);
             }else {//入力が無ければ
                 msg="入力がありませんでした";
 
@@ -85,7 +87,7 @@ public class Management extends HttpServlet {
             break;
 
         case "edit":
-            book = searchBooks.newBuyDAO();
+            //book = blDAO.newBuyDAO();
             request.setAttribute("book", book);
             forwardPath = "/WEB-INF/jsp/edit.jsp";
             break;
